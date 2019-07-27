@@ -1,0 +1,17 @@
+Programme puissance
+Déclarations
+    Paramètre nb en Réel
+    Paramètre exposant en Entier 
+    Variables  résultat en Réel
+    Variables compteur Entier
+Début
+    Ecrire("Entrez le nombre et sa puissance : ")
+    Lire(nb, exposant)
+    compteur <- 0
+    résultat <- 1
+    Tant que (compteur < exposant) Faire
+        résultat = résultat * nb
+        compteur = compteur + 1
+    FinTantQue
+    Ecrire(nb, " à la puissance ", exposant, " = ", résultat)
+Fin
