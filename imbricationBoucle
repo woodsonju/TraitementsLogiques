@@ -1,0 +1,6 @@
+pour i variant de 1 à 3 Faire
+    Ecrire("Boucle externe, itération : ", i)
+    Pour j variant de 1 à 4 Faire
+        Ecrire("interne", j)
+    FinPour
+FinPour
