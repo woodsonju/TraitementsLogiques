@@ -1,0 +1,28 @@
+/*BOUCLE TANT QUE : */
+nb <- 0
+somme <- 0
+Tant que (nb <> -1) Faire
+    Ecrire("Entrez un nombre (-1 pour terminer) : ")
+    Lire(nb)
+    si(nb <> -1)
+        somme <- somme + nb
+    FinSi
+FinTantQue
+Ecrire("La somme de ces nombres est : ", somme)
+
+
+/*BOUCLE FAIRE TANT QUE :*/
+somme <- 0
+Faire
+    Ecrire("Entrez un nombre (-1 pour terminer) : ")
+    Lire(nb)
+    si(nb <> -1)
+        somme <- somme + nb
+    FinSi
+Tant que (nb <> -1)
+FinTantQue
+Ecrire("La somme de ces nombres est : ", somme)
+
+
+    
+            
