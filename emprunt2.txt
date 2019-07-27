@@ -1,0 +1,54 @@
+Programme emprunt2
+Déclarations
+    Variables MensualiteHA, MensualiteAC, Capital       en Réel
+    Variables NbAn, NbMois, i                           en Entier
+    Variables TauxMensuel, TauxAnnuel, TauxAssurance    en Réel
+    Variables Calcul1, Calcul2, Calcul3, CoutAss        en Réel
+    Variables CapRestant, Amortis, Intérêts             en Réel
+   
+    //Saisie des données initiales
+    Ecrire("Capital : ")
+    Lire(Capital)
+    Ecrire("Nombre d'années : ")
+    Lire(NbAn)
+    Ecrire("Taux Annuel hors assurance (2.3) : ")
+    Lire(TauxAnnuel)
+    Ecrire("Taux Assurance (0.35) : ")
+    Lire(TauxAssurance)
+    
+    //Calculs
+    NbMois <- NbAn * 12
+    TauxMensuel <- (TauxAnnuel/100)/12
+    Calcul1 <- Capital*TauxMensuel
+    Calclul2 <- (1+TauxMensuel)**NbMois
+    Calcul3 <- Calcul2 - 1
+    CoutAss <- (Capital*(TauxAssurance/100))/12 
+    MensualiteHA <- Calcul1*(Calcul2/Calcul3)
+    MensualiteAC <- MensualiteHA + CoutAss
+    
+    //Affichage de la mensualité
+    Ecrire("Mensualite hors assurance : ", MensualiteHA)
+    Ecrire("Coût assurance par mois : ", CoutAss)
+    Ecrire("Mensualite avec assurance : ", MensualiteAC)
+    
+    //Affichage du tableau d'amortissement
+    CapRestant <- Capitaal 
+    Ecrire("Mensualité ", "Amortissement ", "Intérêts ", "Capital ", "Ass.")
+    Pour i variant de 1 à NbMois Faire 
+        Calcul1 <- CapRestant*TauxMensuel
+        Calcul2 <- (1+TauxMensuel)**(NbMois-i)
+        Calcul3 <- Calcul2 - 1
+        MensualiteHA <- Calcul1*(Calcul2/Calcul3)
+        MensualiteAC < MensualiteHA + CoutAss
+        Intérêts <- Calcul1
+        Amortis <- MesualiteHA - Intérêts
+        CapRestant <- CapRestant - Amortis
+        Ecrire(MensualiteAC, " ", Amortis, " ", Intérêts, " ", CapRestant, " ", CoutAss)
+    FinPour
+Fin
+        
+
+    
+    
+    
+    
