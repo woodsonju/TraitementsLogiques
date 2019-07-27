@@ -1,0 +1,16 @@
+Programme calcul_élémentaire
+Déclarations
+    Variables i, j, k cpt en Entier
+Début
+    Ecrire("Entrez 2 nombres: ")
+    Lire(i, j)
+    cpt <- 0
+    Tant que (j <> 0) Faire
+        k <- i MOD j
+        i <- j
+        j <- k 
+        cpt <- cpt + 1
+    FintTantQue
+    Ecrire("Résultat : ", i)
+    Ecrire("Nombre d'itération : ", cpt)
+Fin
