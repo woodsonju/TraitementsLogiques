@@ -48,6 +48,12 @@ class Emprunt2Test {
     
     @Test
     public void affichage_amortissement(){
-        
+        emprunt2 = new Emprunt2(10000, 1,1.8,0.25 );
+        emprunt2.affichage_amortissement();
+        assertEquals(843.56, emprunt2.getMensualiteAC(), 0.01);
+        assertEquals(826.48, emprunt2.getAmortis(), 0.01);
+        assertEquals(15.00, emprunt2.getInteret(), 0.01);
+        assertEquals(9173.52, emprunt2.getCapRestant(), 0.01);
+        assertEquals(2.08, emprunt2.getCoutAss(), 0.01);
     }
 }

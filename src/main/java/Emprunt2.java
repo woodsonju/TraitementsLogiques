@@ -45,32 +45,29 @@ public class Emprunt2 {
     }
     
     public void affichage_amortissement() {
+        nbMois = nbAn*12;
+        tauxMensuel = (tauxAnnuel/100)/12;        
         capRestant = capital;
-        System.out.println("Mensualité " + "Amortissement " + "Intérêts " + "Capital " + "Ass.");
+        System.out.println("Mensualité" + " | " + "Amortissement"  + " | " + "Intérêts" + " | " + "Capital" + " | " + "Ass.");
         for(int i=0; i<nbMois; i++) {
-            double calcul1 = capital*tauxMensuel;
-            double calcul2 = Math.pow((1+tauxMensuel),nbMois-1);
+            double calcul1 = capRestant*tauxMensuel;
+            double calcul2 = Math.pow((1+tauxMensuel),nbMois-i);
             double calcul3 = calcul2 - 1;
+            coutAss = (capital*(tauxAssurance/100))/12;
+            mensualiteHA = calcul1*(calcul2/calcul3);
+            mensualiteAC = mensualiteHA + coutAss;
+            interet = calcul1;
+            amortis = mensualiteHA - interet;
+            capRestant = capRestant - amortis;
+            System.out.println(mensualiteAC + " | " +  amortis +  " | " + interet + " | " + capRestant + " | " + coutAss);
         }
-        /*
-            CapRestant <- Capitaal 
-    Ecrire("Mensualité ", "Amortissement ", "Intérêts ", "Capital ", "Ass.")
-    Pour i variant de 1 à NbMois Faire 
-        Calcul1 <- CapRestant*TauxMensuel
-        Calcul2 <- (1+TauxMensuel)**(NbMois-i)
-        Calcul3 <- Calcul2 - 1
-        MensualiteHA <- Calcul1*(Calcul2/Calcul3)
-        MensualiteAC < MensualiteHA + CoutAss
-        Intérêts <- Calcul1
-        Amortis <- MesualiteHA - Intérêts
-        CapRestant <- CapRestant - Amortis
-        Ecrire(MensualiteAC, " ", Amortis, " ", Intérêts, " ", CapRestant, " ", CoutAss)
-         */
+    
     }
     
     public void runMain() {
         this.saisie_donnee();
         this.affichage_mensualite();
+        this.affichage_amortissement();
     }
 
     public double getMensualiteHA() {
@@ -83,5 +80,25 @@ public class Emprunt2 {
 
     public double getCoutAss() {
         return coutAss;
+    }
+
+    public double getCapital() {
+        return capital;
+    }
+
+    public double getTauxAssurance() {
+        return tauxAssurance;
+    }
+
+    public double getCapRestant() {
+        return capRestant;
+    }
+
+    public double getAmortis() {
+        return amortis;
+    }
+
+    public double getInteret() {
+        return interet;
     }
 }
