@@ -11,8 +11,9 @@ public class Main {
 /*        Emprunt2 emprunt4 = new Emprunt2(10000,1,1.8,0.25);
         emprunt4.affichage_mensualite();*/
 
-        Factorielle.getFactorielle();
+       // Factorielle.getFactorielle();
 
+        System.out.println(FactorielleRecursive.getFactorielle(4));
 
     }
 }

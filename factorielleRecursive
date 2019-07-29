@@ -1,0 +1,14 @@
+Programme FactorielleRecursive
+Déclaration
+    Paramètre N  en entier
+    Variables resultat en entier
+Debut
+    Si N = 1
+         Retourne 1
+    Sinon
+       Retourne  N* FactorielRecursive(N-1)
+    FinSi
+Fin
+
+    
+    
