@@ -16,12 +16,17 @@ public class Main {
        // System.out.println(FactorielleRecursive.getFactorielle(4));
 
        // Base2To9.getBase();
-        
-/*       NombrePremier.getTimeExecutionGetNombrePremierV1();
+/*        
+      NombrePremier.getTimeExecutionGetNombrePremierV1();
        NombrePremier.affichage_resultat();*/
 
-       NombrePremier.getTimeExecutionGetNombrePremierV2();
-        NombrePremier.affichage_resultat();
+/*       NombrePremier.getTimeExecutionGetNombrePremierV2();
+        NombrePremier.affichage_resultat();*/
         
+        NombrePremier.getTimeExecutionGetNombrePremierV3();
+        NombrePremier.affichage_resultat();
+
+/*        NombrePremier.getTimeExecutionGetNombrePremierV4();
+        NombrePremier.affichage_resultat();*/
     }
 }

@@ -25,19 +25,17 @@ public class NombrePremier {
      * Complexité O(N)
      * Equivalent ici à 999999998 itérations 
      * pour nb = 1000000001
-     * Temps d'éxecution : 3131.80341 ms
+     * Temps d'éxecution : 2987.553803 ms
      */
     public static void getNombrePremierV1() {
         int limite = nb - 1;
-        boolean trouvé = false;
-
         if(nb < 2)
             System.out.println("Le nombre doit être supérieur à 1");
         else {
             for(int i=2; i<limite; i++) {
                 nb_iterations++;
                if(nb % i == 0) {
-                   trouvé = true;
+                   trouve = true;
                    diviseur1 = i;
                    diviseur2 = nb / i;
                }
@@ -76,6 +74,64 @@ public class NombrePremier {
     }
 
     /**
+     * Arret le traitemement quand un diviseur est trouvé
+     * Complexité : O((Maths.SQRT(N))/2)
+     * Resultat obtenu en 3 itérations 
+     * pour nb = 1000000001
+     * Temps d'éxecution : 0.048034 ms
+     */
+    public static void getNombrePremierV3(){
+        int limite = (int) Math.sqrt(nb) + 1;
+        if(nb < 2) 
+            System.out.println("Le nombre doit être supérieur à 1");
+        else {
+            int reste = nb % 2;
+            if(reste == 0) {
+                trouve = true;
+                diviseur1 = 2;
+                diviseur2 = nb / 2;
+            }
+            int i = 3;
+            while ((!trouve) && (i<=limite)){
+                nb_iterations++;
+                reste = nb % i;
+                if(reste == 0) {
+                    trouve = true;
+                    diviseur1 = i;
+                    diviseur2 = nb / i;
+                }
+                i+=2;
+            }
+        }
+    }
+
+
+    /**
+     * Arret le traitemement quand un diviseur est trouvé
+     * Complexité : O(N)
+     * Resultat obtenu en 6 itérations 
+     * pour nb = 1000000001
+     * Temps d'éxecution : 0.004926 ms
+     */
+    public static void getNombrePremierV4(){
+        int limite = nb - 1;
+        if(nb < 2)
+            System.out.println("Le nombre doit être supérieur à 1");
+        else {
+            int i = 2;
+            while ((!trouve) && (i<=limite)){
+                nb_iterations++;
+                if(nb % i == 0) {
+                    trouve = true;
+                    diviseur1 = i;
+                    diviseur2 = nb / i;
+                }
+                i++;
+            }
+        }
+    }
+
+    /**
      * Affiche les résultats
      */
     public static void affichage_resultat() {
@@ -88,10 +144,10 @@ public class NombrePremier {
         System.out.println("Resultat obtenu en " +  nb_iterations + " itérations");
     }
 
-    /**
-     * Obtenir le temps d'execution pour la méthode 
-     * getNombrePremierV1
-     */
+        /**
+         * Obtenir le temps d'execution pour la méthode 
+         * getNombrePremierV1
+         */
     public static void getTimeExecutionGetNombrePremierV1() {
         long debut = System.nanoTime();
         getNombrePremierV1();
@@ -109,6 +165,34 @@ public class NombrePremier {
     public static void getTimeExecutionGetNombrePremierV2() {
         long debut = System.nanoTime();
         getNombrePremierV2();
+        long fin =  System.nanoTime();
+        long totalTime = fin - debut;
+        double totalTimeMS = (double) totalTime / 1000000;
+        System.out.println("Temps d'éxecution : " + totalTime + " ns");
+        System.out.println("Temps d'éxecution : " + totalTimeMS + " ms");
+    }
+
+    /**
+     * Obtenir le temps d'execution pour la méthode 
+     * getNombrePremierV3
+     */
+    public static void getTimeExecutionGetNombrePremierV3() {
+        long debut = System.nanoTime();
+        getNombrePremierV3();
+        long fin =  System.nanoTime();
+        long totalTime = fin - debut;
+        double totalTimeMS = (double) totalTime / 1000000;
+        System.out.println("Temps d'éxecution : " + totalTime + " ns");
+        System.out.println("Temps d'éxecution : " + totalTimeMS + " ms");
+    }
+
+    /**
+     * Obtenir le temps d'execution pour la méthode 
+     * getNombrePremierV4
+     */
+    public static void getTimeExecutionGetNombrePremierV4() {
+        long debut = System.nanoTime();
+        getNombrePremierV4();
         long fin =  System.nanoTime();
         long totalTime = fin - debut;
         double totalTimeMS = (double) totalTime / 1000000;
