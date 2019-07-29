@@ -8,7 +8,11 @@ public class NombrePremier {
     private static int nb_iterations = 0;
     private static boolean trouve = false;
 
-
+    /**
+     * L'utilisateur saisie un nombre afin de savoir 
+     * si c'est c'est nombre premier par la suite
+     * @return nb 
+     */
     public static int  saisieNombre() {
         Scanner sc = new Scanner(System.in);
         int nb;
@@ -38,13 +42,6 @@ public class NombrePremier {
                    diviseur2 = nb / i;
                }
             }
-            if(trouvé) {
-                System.out.println(nb + " n'est pas prémier !");
-                System.out.println("Il est divisible par " + diviseur1 + " et " + diviseur2);
-            } else {
-                System.out.println(nb + " est un nombre prémier");
-            }
-            System.out.println("Résultat obtenu en " + nb_iterations + " itérations");
         }
     }
 
@@ -75,6 +72,12 @@ public class NombrePremier {
                 }
             }
         }
+    }
+
+    /**
+     * Affiche les résultats
+     */
+    public static void affichage_resultat() {
         if(trouve) {
             System.out.println(nb + " n'est pas prémier !");
             System.out.println("Il est divisible par " + diviseur1 + " et " + diviseur2);
