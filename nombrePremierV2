@@ -1,0 +1,49 @@
+Programme NombrePremier O((Maths.SQRT(N))/2)
+Déclaration: 
+    Variables Nb, diviseur1, diviseur2, reste       en Entier
+    Variables nb_itérations, i, limite              en Entier
+    Variable trouvé                                 en Booléen
+Début
+    Ecrire("Entrez un nombre : ")
+    Lire(Nb)
+     Si (nb < 2) Alors
+        Ecrire("Le nombre doit être supérieur à 1 !")
+     Sinon
+        //La limite est la partie entière de la racine carrées + 1
+        limite <- partie_entière(racine_carrées(nb) + 1)
+        nb_iteration <- 0
+        trouvé <- FAUX
+        //On retire le cas des nombres pairs
+        reste <- nb MOD 2
+        Si(reste = 0) Alors 
+            trouvé <- VRAI
+            //On mémorise les diviseurs
+            diviseur1 <- 2
+            diviseur2 <- nb DIV 2
+        Sinon
+            //On teste tous les diviseurs impairs
+            Pour i variant de 3 à limite par pas de 2 Faire
+                nb_iteration <- nb_iteration + 1
+                reste <- nb MOD i
+                Si(reste = 0) Alors
+                    trouvé <- VRAI
+                    diviseur1 <- i
+                    diviseur2 <- nb DIV i
+                FinSi
+            FinPour
+        FinSi
+        Si(trouvé) Alors
+            Ecrire(nb, "n'est pas prémier !")
+            Ecrire("Il est divisible par ", diviseur1, " et ", diviseur2)
+        Sinon
+            Ecrire(nb, " est un nombre PREMIER !")
+        FinSi
+        Ecrire("Resultat obtenu en ", nb_iterations, " itérations")
+     Finsi
+Fin
+                    
+    
+        
+                
+    
+    
