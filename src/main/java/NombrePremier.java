@@ -25,9 +25,9 @@ public class NombrePremier {
      * Complexité O(N)
      * Equivalent ici à 999999998 itérations 
      * pour nb = 1000000001
+     * Temps d'éxecution : 3131.80341 ms
      */
     public static void getNombrePremierV1() {
-        
         int limite = nb - 1;
         boolean trouvé = false;
 
@@ -49,8 +49,9 @@ public class NombrePremier {
      * Complexité : O((Maths.SQRT(N))/2)
      * Equivalent ici à 15810 itérations 
      * pour nb = 1000000001
+     * Temps d'éxecution : 0.474595 ms
      */
-    public static void nombrePremierV2(){
+    public static void getNombrePremierV2(){
         int limite = (int) Math.sqrt(nb) + 1;
         if(nb < 2)
             System.out.println("Le nombre doit être supérieur à 1");
@@ -85,5 +86,33 @@ public class NombrePremier {
             System.out.println(nb + " est un nombre PREMIER !");
         }
         System.out.println("Resultat obtenu en " +  nb_iterations + " itérations");
+    }
+
+    /**
+     * Obtenir le temps d'execution pour la méthode 
+     * getNombrePremierV1
+     */
+    public static void getTimeExecutionGetNombrePremierV1() {
+        long debut = System.nanoTime();
+        getNombrePremierV1();
+        long fin =  System.nanoTime();
+        long totalTime = fin - debut;
+        double totalTimeMS = (double) totalTime / 1000000;
+        System.out.println("Temps d'éxecution : " + totalTime + " ns");
+        System.out.println("Temps d'éxecution : " + totalTimeMS + " ms");
+    }
+
+    /**
+     * Obtenir le temps d'execution pour la méthode 
+     * getNombrePremierV2
+     */
+    public static void getTimeExecutionGetNombrePremierV2() {
+        long debut = System.nanoTime();
+        getNombrePremierV2();
+        long fin =  System.nanoTime();
+        long totalTime = fin - debut;
+        double totalTimeMS = (double) totalTime / 1000000;
+        System.out.println("Temps d'éxecution : " + totalTime + " ns");
+        System.out.println("Temps d'éxecution : " + totalTimeMS + " ms");
     }
 }

@@ -17,9 +17,11 @@ public class Main {
 
        // Base2To9.getBase();
         
-        //NombrePremier.getNombrePremierV1();
-        
-        NombrePremier.nombrePremierV2();
+/*       NombrePremier.getTimeExecutionGetNombrePremierV1();
+       NombrePremier.affichage_resultat();*/
+
+       NombrePremier.getTimeExecutionGetNombrePremierV2();
+        NombrePremier.affichage_resultat();
         
     }
 }
