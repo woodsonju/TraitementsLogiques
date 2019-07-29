@@ -1,6 +1,6 @@
 Programme factorielle
 Déclaration
-    paramètre X, résultat, compteur  en Entier 
+    Variables  X, résultat, compteur  en Entier 
 Début
     Ecrire("Entrez un nombre entier positif : ")
     Lire(X)

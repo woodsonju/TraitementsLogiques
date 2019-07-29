@@ -27,7 +27,7 @@ Début
             FinSi
         FinPour
         Si(trouvé) Alors 
-            Ecrire(nb, "n'est pas prémiere !"
+            Ecrire(nb, "n'est pas prémier !")
             Ecrire("Il est divisible par ", diviseur1, " et ", diviseur2)
         Sinon
             Ecrire(nb, " est un nombre PREMIER !")

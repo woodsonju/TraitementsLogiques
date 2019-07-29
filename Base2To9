@@ -1,6 +1,6 @@
 Programme Base2To9
 Déclaration
-    Variables Base, Nb10, NbQuotient, NbReste    en entier
+    Variables Base, Nb10, NbQuotient, NbReste    en Entier
     Variables Resultat                           en Liste
 Début
     Ecrire("Entrez un nombre entier : ")
