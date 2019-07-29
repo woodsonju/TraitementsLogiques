@@ -13,7 +13,9 @@ public class Main {
 
        // Factorielle.getFactorielle();
 
-        System.out.println(FactorielleRecursive.getFactorielle(4));
+       // System.out.println(FactorielleRecursive.getFactorielle(4));
 
+        Base2To9.getBase();
+        
     }
 }

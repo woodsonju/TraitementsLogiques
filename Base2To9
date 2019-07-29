@@ -1,0 +1,21 @@
+Programme Base2To9
+Déclaration
+    Variables Base, Nb10, NbQuotient, NbReste    en entier
+    Variables Resultat                           en Liste
+Début
+    Ecrire("Entrez un nombre entier : ")
+    Lire(Nb10)
+    NbQuotient <- Nb10
+    Ecrire("Base de conversion : ")
+    Lire(Base)
+    Si(Nb10 < Base) Alors
+        Ecrire(Nb10 + " en base " + Base + " = " + Nb10)
+    FinSi
+    TantQue (NbQuotient <> 0) Faire 
+        NbReste <- NbQuotient MOD  Base
+        Resultat <- Liste.Ajouter(NbReste)
+        NbQuotient <- NbQuotient DIV Base
+    FinTantQue
+    Liste.Trier(Resulat)      
+    Ecrire(Nb10 " en Base ", Base, " = ", Resultat)
+Fin
