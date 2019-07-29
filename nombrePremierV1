@@ -1,0 +1,40 @@
+//Nombre prémiere complexité O(N)
+Programme NombrePremier
+Déclaration: 
+    Variables nb, diviseur1, diviseur2, reste       en Entier
+    Variables nb_itérations, i, limite              en Entier
+    Variable trouvé                                 en Booléen
+Début
+    Ecrire("Entrez un nombre : ")
+    Lire(Nb)
+    Si (nb < 2) Alors
+        Ecrire("Le nombre doit être supérieur à 1 !")
+    Sinon
+        nb_itération <- 0
+        limite <- nb - 1
+        trouvé <- FAUX
+        //On tests tous les diviseurs
+        pour i variant de 2 à limite Faire
+            nb_itération <- nb_itération + 1
+            reste <- nb MOD i
+            si(reste = 0) Alors
+                trouvé <- VRAI
+                //On mémorise les deux derniers diviseurs trouvés
+                //Par exemple pour 24 les couples successifs sont : 
+                // 2 et 12, 3 et 8, 4 et 6, 6 et 4, 8 et 3, 12 et 2
+                diviseur1 <- i
+                diviseur2 <- nb DIV i
+            FinSi
+        FinPour
+        Si(trouvé) Alors 
+            Ecrire(nb, "n'est pas prémiere !"
+            Ecrire("Il est divisible par ", diviseur1, " et ", diviseur2)
+        Sinon
+            Ecrire(nb, " est un nombre PREMIER !")
+        FinSi
+        Ecrire("Résultat obtenu en ", nb_itérations, " itérations")
+    FinSi
+Fin
+        
+            
+        
