@@ -13,7 +13,4 @@ public class Factorielle {
         System.out.println("Factorielle de " + x + " = " + resultat);
     }
     
-    public static  void getFactorielleRecursive() {
-        
-    }
 }
