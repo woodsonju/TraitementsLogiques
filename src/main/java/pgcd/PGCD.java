@@ -1,3 +1,5 @@
+package pgcd;
+
 import java.util.Scanner;
 
 public class PGCD {
